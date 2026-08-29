@@ -1,8 +1,96 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Test</title>
+    <title>Social Links</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .logo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        font-size: 60px;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .social-btn {
+        padding: 15px 40px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        color: white;
+        min-width: 200px;
+      }
+
+      .tiktok-btn {
+        background-color: #000;
+      }
+
+      .tiktok-btn:hover {
+        background-color: #333;
+        transform: scale(1.05);
+      }
+
+      .instagram-btn {
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      }
+
+      .instagram-btn:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+      }
+
+      .facebook-btn {
+        background-color: #1877f2;
+      }
+
+      .facebook-btn:hover {
+        background-color: #166fe5;
+        transform: scale(1.05);
+      }
+    </style>
   </head>
   <body>
-    <h1>This is an testing website</h1>
+    <div class="container">
+      <div class="logo">👤</div>
+      <div class="buttons">
+        <a href="https://www.tiktok.com" class="social-btn tiktok-btn">TikTok</a>
+        <a href="https://www.instagram.com" class="social-btn instagram-btn">Instagram</a>
+        <a href="https://www.facebook.com" class="social-btn facebook-btn">Facebook</a>
+      </div>
+    </div>
   </body>
 </html>
