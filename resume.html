@@ -1,5 +1,760 @@
-<html>
-  <body BGCOLOR="red">
-    <H1>THIS IS CURRENTLY UNDER MAINTANANCE.</H1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="CV of Ritu Kumari Sah - Software Engineer">
+    <title>Ritu Kumari Sah | CV</title>
+
+    <style>
+        /* =========================
+           RESET
+        ========================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", Arial, sans-serif;
+            background: #eef1f5;
+            color: #202733;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           PAGE
+        ========================== */
+
+        .page {
+            width: min(1100px, 94%);
+            margin: 40px auto;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+            display: grid;
+            grid-template-columns: 310px 1fr;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================== */
+
+        .sidebar {
+            background: #202a34;
+            color: white;
+            padding: 45px 30px;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .profile-circle {
+            width: 105px;
+            height: 105px;
+            margin: 0 auto 18px;
+
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f1c40f, #d99e00);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #202a34;
+            font-size: 36px;
+            font-weight: 800;
+        }
+
+        .profile h1 {
+            color: #f1c40f;
+            font-size: 28px;
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
+
+        .profile p {
+            color: #d9dde1;
+            font-size: 15px;
+        }
+
+        /* =========================
+           SIDEBAR SECTIONS
+        ========================== */
+
+        .side-section {
+            margin-bottom: 35px;
+        }
+
+        .side-title {
+            color: #f1c40f;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 18px;
+        }
+
+        .contact {
+            display: flex;
+            gap: 12px;
+            margin: 14px 0;
+            font-size: 14px;
+            color: #e2e6e9;
+            word-break: break-word;
+        }
+
+        .contact-icon {
+            min-width: 22px;
+            color: #f1c40f;
+            font-weight: bold;
+        }
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skill {
+            margin-bottom: 17px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #e8ebee;
+        }
+
+        .skill-bar {
+            height: 7px;
+            background: #56616b;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: #f1c40f;
+            border-radius: 20px;
+        }
+
+        /* =========================
+           LISTS
+        ========================== */
+
+        .simple-list {
+            list-style: none;
+        }
+
+        .simple-list li {
+            margin: 9px 0;
+            color: #e0e4e7;
+            font-size: 15px;
+        }
+
+        .simple-list li::before {
+            content: "•";
+            color: #f1c40f;
+            margin-right: 10px;
+        }
+
+        /* =========================
+           MAIN CONTENT
+        ========================== */
+
+        .content {
+            padding: 55px 55px;
+        }
+
+        .section {
+            margin-bottom: 45px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            font-size: 25px;
+            color: #202a34;
+            margin-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: "";
+            height: 3px;
+            width: 55px;
+            background: #f1c40f;
+            border-radius: 10px;
+        }
+
+        .profile-text {
+            color: #5e6872;
+            font-size: 16px;
+            max-width: 750px;
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================== */
+
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 8px;
+            bottom: 8px;
+            width: 3px;
+            background: #f1c40f;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -29px;
+            top: 7px;
+
+            width: 11px;
+            height: 11px;
+
+            background: #f1c40f;
+            border: 4px solid white;
+            border-radius: 50%;
+
+            box-shadow: 0 0 0 2px #f1c40f;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-header h3 {
+            font-size: 18px;
+            color: #202a34;
+        }
+
+        .date {
+            color: #a07900;
+            font-size: 14px;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            color: #777;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: #626b74;
+            font-size: 15px;
+        }
+
+        /* =========================
+           EDUCATION CARDS
+        ========================== */
+
+        .education-card {
+            padding: 20px;
+            border: 1px solid #e5e8eb;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: 0.25s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        }
+
+        .education-card h3 {
+            color: #202a34;
+            font-size: 18px;
+        }
+
+        .education-card .school {
+            color: #777;
+            font-size: 15px;
+            margin-top: 3px;
+        }
+
+        /* =========================
+           PRINT BUTTON
+        ========================== */
+
+        .print-button {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+
+            border: none;
+            border-radius: 50px;
+
+            padding: 13px 20px;
+
+            background: #202a34;
+            color: white;
+
+            cursor: pointer;
+            font-size: 14px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,.2);
+            transition: .2s;
+        }
+
+        .print-button:hover {
+            background: #f1c40f;
+            color: #202a34;
+        }
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .page {
+                grid-template-columns: 250px 1fr;
+            }
+
+            .sidebar {
+                padding: 35px 22px;
+            }
+
+            .content {
+                padding: 40px 35px;
+            }
+
+            .profile h1 {
+                font-size: 24px;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .date {
+                margin-top: 3px;
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 650px) {
+
+            body {
+                background: white;
+            }
+
+            .page {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+
+                display: block;
+            }
+
+            .sidebar {
+                padding: 35px 25px;
+            }
+
+            .content {
+                padding: 35px 25px;
+            }
+
+            .profile {
+                margin-bottom: 30px;
+            }
+
+            .profile-circle {
+                width: 90px;
+                height: 90px;
+                font-size: 30px;
+            }
+
+            .profile h1 {
+                font-size: 26px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .profile-text {
+                font-size: 15px;
+            }
+
+            .timeline-header h3 {
+                font-size: 17px;
+            }
+
+            .print-button {
+                right: 15px;
+                bottom: 15px;
+            }
+        }
+
+        /* =========================
+           VERY SMALL PHONES
+        ========================== */
+
+        @media (max-width: 380px) {
+
+            .sidebar,
+            .content {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .profile h1 {
+                font-size: 23px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+        }
+
+        /* =========================
+           PRINT / PDF
+        ========================== */
+
+        @media print {
+
+            body {
+                background: white;
+            }
+
+            .page {
+                width: 100%;
+                margin: 0;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            .education-card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="profile">
+
+                <div class="profile-circle">
+                    RS
+                </div>
+
+                <h1>Ritu Kumari<br>Sah</h1>
+
+                <p>Software Engineer</p>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <section class="side-section">
+
+                <h2 class="side-title">Contact</h2>
+
+                <div class="contact">
+                    <span class="contact-icon">☎</span>
+                    <span>9824604623</span>
+                </div>
+
+                <div class="contact">
+                    <span class="contact-icon">✉</span>
+                    <a href="mailto:me@ritusah.com.np">
+                        me@ritusah.com.np
+                    </a>
+                </div>
+
+                <div class="contact">
+                    <span class="contact-icon">⌖</span>
+                    <span>Janakpur Dham</span>
+                </div>
+
+            </section>
+
+
+            <!-- SKILLS -->
+
+            <section class="side-section">
+
+                <h2 class="side-title">Skills</h2>
+
+                <div class="skill">
+
+                    <div class="skill-header">
+                        <span>Computer</span>
+                        <span>80%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width:80%"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-header">
+                        <span>Microsoft Word & Excel</span>
+                        <span>80%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width:80%"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="skill-header">
+                        <span>Graphic Design</span>
+                        <span>80%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width:80%"></div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- LANGUAGES -->
+
+            <section class="side-section">
+
+                <h2 class="side-title">Languages</h2>
+
+                <ul class="simple-list">
+                    <li>English</li>
+                    <li>Hindi</li>
+                    <li>Nepali</li>
+                    <li>Maithili</li>
+                </ul>
+
+            </section>
+
+
+            <!-- INTERESTS -->
+
+            <section class="side-section">
+
+                <h2 class="side-title">Interests</h2>
+
+                <ul class="simple-list">
+                    <li>Music</li>
+                    <li>Reading</li>
+                    <li>Traveling</li>
+                    <li>Skill Learning</li>
+                    <li>Photography</li>
+                    <li>Teamwork</li>
+                </ul>
+
+            </section>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <section class="content">
+
+
+            <!-- PROFILE -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Profile
+                </h2>
+
+                <p class="profile-text">
+                    Motivated and detail-oriented professional with strong
+                    communication and problem-solving skills. Experienced in
+                    working in fast-paced environments and committed to
+                    delivering high-quality results. Quick learner with the
+                    ability to adapt to new challenges and technologies.
+                </p>
+
+            </section>
+
+
+            <!-- EXPERIENCE -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Work Experience
+                </h2>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-header">
+
+                            <div>
+                                <h3>Nabil Bank</h3>
+                                <p class="subtitle">Internship</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- EDUCATION -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Education
+                </h2>
+
+
+                <div class="education-card">
+
+                    <div class="timeline-header">
+
+                        <div>
+                            <h3>
+                                Bachelor in Computer Applications (BCA)
+                            </h3>
+
+                            <p class="school">
+                                Model Multiple College, Janakpur
+                            </p>
+                        </div>
+
+                        <span class="date">
+                            Aug 2021 – Aug 2025
+                        </span>
+
+                    </div>
+
+                    <p class="description">
+                        Learned programming, data structures, algorithms,
+                        and software development principles. Developed
+                        foundational IT skills for problem-solving and
+                        system design, preparing for entry-level technology
+                        roles and further specialization in computer science.
+                    </p>
+
+                </div>
+
+
+                <div class="education-card">
+
+                    <h3>+2</h3>
+
+                    <p class="school">
+                        Monastic College
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ADDITIONAL INFORMATION -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Professional Strengths
+                </h2>
+
+                <div class="education-card">
+
+                    <p class="description">
+                        • Problem solving<br>
+                        • Communication<br>
+                        • Quick learning<br>
+                        • Adaptability<br>
+                        • Teamwork<br>
+                        • Attention to detail
+                    </p>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- PRINT / SAVE AS PDF -->
+
+    <button
+        class="print-button"
+        onclick="window.print()"
+        aria-label="Print CV">
+        🖨 Print / Save PDF
+    </button>
+
+
+</body>
 </html>
