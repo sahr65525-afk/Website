@@ -1,137 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Access</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enter Password</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #0f172a;
+        font-family: Arial, sans-serif;
+        color: white;
+    }
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #0b1020;
-            color: white;
-        }
+    .box {
+        width: 90%;
+        max-width: 350px;
+        padding: 30px;
+        background: #1e293b;
+        border-radius: 18px;
+        text-align: center;
+    }
 
-        .box {
-            width: 90%;
-            max-width: 400px;
-            padding: 35px;
-            text-align: center;
-            background: #151c32;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-        }
+    input {
+        width: 100%;
+        padding: 13px;
+        margin: 15px 0;
+        border: none;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-size: 16px;
+        text-align: center;
+    }
 
-        h1 {
-            margin-bottom: 10px;
-        }
+    button {
+        width: 100%;
+        padding: 13px;
+        border: none;
+        border-radius: 8px;
+        background: #4f8cff;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
 
-        p {
-            color: #aeb7cc;
-            margin-bottom: 25px;
-        }
+    button:hover {
+        background: #3978ee;
+    }
 
-        input {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 10px;
-            outline: none;
-            font-size: 16px;
-            text-align: center;
-            background: #252e48;
-            color: white;
-        }
-
-        button {
-            width: 100%;
-            padding: 14px;
-            margin-top: 15px;
-            border: none;
-            border-radius: 10px;
-            background: #4f8cff;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #3978ee;
-        }
-
-        #error {
-            color: #ff6b6b;
-            margin-top: 15px;
-            display: none;
-        }
-
-        #access {
-            display: none;
-        }
-    </style>
+    #error {
+        color: #ff6b6b;
+        display: none;
+        margin-top: 12px;
+    }
+</style>
 </head>
 
 <body>
 
-    <div class="box">
-        <h1>🔐 Secure Access</h1>
-        <p>Enter the password to access the files.</p>
+<div class="box">
+    <h2>🔐 Enter Password</h2>
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Enter password"
-            maxlength="4"
-        >
+    <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        maxlength="4"
+    >
 
-        <button onclick="checkPassword()">Unlock</button>
+    <button onclick="login()">Continue</button>
 
-        <div id="error">Incorrect password.</div>
+    <div id="error">Wrong password!</div>
+</div>
 
-        <div id="access">
-            <p>Access granted.</p>
-            <button onclick="openFolder()">📁 Open Files</button>
-        </div>
-    </div>
+<script>
+function login() {
+    const password = document.getElementById("password").value;
 
-    <script>
-        const PASSWORD = "9930";
+    if (password === "9930") {
+        window.location.href =
+        "https://mega.nz/folder/zjIHRLYb#2ZQ3FCAB1Jdiyn9ypE4A8A";
+    } else {
+        document.getElementById("error").style.display = "block";
+    }
+}
 
-        function checkPassword() {
-            const entered = document.getElementById("password").value;
-            const error = document.getElementById("error");
-            const access = document.getElementById("access");
-
-            if (entered === PASSWORD) {
-                error.style.display = "none";
-                access.style.display = "block";
-            } else {
-                error.style.display = "block";
-                access.style.display = "none";
-            }
-        }
-
-        function openFolder() {
-            window.location.href =
-                "https://mega.nz/folder/zjIHRLYb#2ZQ3FCAB1Jdiyn9ypE4A8A";
-        }
-
-        document.getElementById("password").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                checkPassword();
-            }
-        });
-    </script>
+document.getElementById("password").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        login();
+    }
+});
+</script>
 
 </body>
 </html>
