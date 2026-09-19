@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Access</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0b1020;
+            color: white;
+        }
+
+        .box {
+            width: 90%;
+            max-width: 400px;
+            padding: 35px;
+            text-align: center;
+            background: #151c32;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #aeb7cc;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+            text-align: center;
+            background: #252e48;
+            color: white;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #4f8cff;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3978ee;
+        }
+
+        #error {
+            color: #ff6b6b;
+            margin-top: 15px;
+            display: none;
+        }
+
+        #access {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>🔐 Secure Access</h1>
+        <p>Enter the password to access the files.</p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter password"
+            maxlength="4"
+        >
+
+        <button onclick="checkPassword()">Unlock</button>
+
+        <div id="error">Incorrect password.</div>
+
+        <div id="access">
+            <p>Access granted.</p>
+            <button onclick="openFolder()">📁 Open Files</button>
+        </div>
+    </div>
+
+    <script>
+        const PASSWORD = "9930";
+
+        function checkPassword() {
+            const entered = document.getElementById("password").value;
+            const error = document.getElementById("error");
+            const access = document.getElementById("access");
+
+            if (entered === PASSWORD) {
+                error.style.display = "none";
+                access.style.display = "block";
+            } else {
+                error.style.display = "block";
+                access.style.display = "none";
+            }
+        }
+
+        function openFolder() {
+            window.location.href =
+                "https://mega.nz/folder/zjIHRLYb#2ZQ3FCAB1Jdiyn9ypE4A8A";
+        }
+
+        document.getElementById("password").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                checkPassword();
+            }
+        });
+    </script>
+
+</body>
+</html>
